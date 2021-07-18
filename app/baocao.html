@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Báo cáo</title>
+    <link rel="stylesheet" href="../css/baocao.css">
+    <link rel="stylesheet" href="../css/select2.min.css">
+    <script src="../js/jquery-3.5.1.min.js"></script>
+    <script src="../js/select2.min.js"></script>
+    <script src="../js/baocao.js"></script>
+    <style>
+        
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="bodycontent">
+            <div class="sidebar">
+                <h3>Danh Mục Báo Cáo</h3>
+                <input class="sidebarSearch" type="text" id="sidebarSearch" onkeyup="sidebarSearch()"
+                    placeholder="Tìm kiếm.." title="Type in a report" />
+                <ul id="sidebarMenu">
+                    <li><a href="#" id="tablinks0" class="tablinks" onclick="openContent(event, 'tabcontent0')">00.Báo
+                            cáo thống kê tài
+                            sản theo cán bộ quản lý tài sản</a></li>
+                </ul>
+            </div>
+
+            <div class="contents">
+                <div class="tabcontent" id="tabcontent0">
+                    <h4>00.Báo cáo thống kê tài
+                        sản theo cán bộ quản lý tài sản</h4>
+                    <div class="filter">
+                        <div class="filterdetail">
+                            <label>Văn phòng: </label><br>
+                            <select style="width: 100%;" id="filterdetail0"
+                                class="js-example-basic-multiple form-control" name="states[]" multiple="multiple">
+                                <option value="ALL">ALL</option>
+                                <option value="AL">Văn phòng quận 9</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btnshowbc">
+                        Hiển thị báo cáo
+                    </button>
+                </div>
+            </div>
+
+
+        </div>
+    </main>
+
+    <script>
+        document.getElementById('tablinks0').click();
+        $(document).ready(function () {
+            $('.js-example-basic-multiple').select2({
+                placeholder: 'Chọn văn phòng..',
+                allowClear: true,
+
+            });
+        });
+
+        $('#filterdetail0').on("select2:select", function (e) {
+            var data = e.params.data.text;
+            if (data == 'ALL') {
+                $("#filterdetail0 > option").prop("selected", "selected");
+                $("#filterdetail0").trigger("change");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendar</title>
+  <link rel="stylesheet" href="../css/calendar.css">
+  <script src="../js/calendar.js"></script>
+  <style>
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+      width: 100%;
+      border: 1px solid #ddd;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 16px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="sidebarcalendar">
+      <div class="month">
+        <ul>
+          <li class="prev" id="sidebarPrev" onclick="prevBtn()">&#10094;</li>
+          <li class="next" id="sidebarNext" onclick="nextBtn()">&#10095;</li>
+          <li id="sidebarMonth">
+          </li>
+        </ul>
+      </div>
+      <div class="minicalendar">
+        <ul class="weekdays">
+          <li>T2</li>
+          <li>T3</li>
+          <li>T4</li>
+          <li>T5</li>
+          <li>T6</li>
+          <li>T7</li>
+          <li>CN</li>
+        </ul>
+        <ul class="days" id="miniCalendarTodays">
+        </ul>
+
+        <div class="sidebarTask">
+          <div class="sidebarTaskContent">
+            <div class="sidebarTaskCol">
+            </div>
+            <div class="sidebarTaskCTime">
+              <span>9:00 SA</span>
+              <div class="sidebarTaskCTitle">
+                <span>Họp phòng ITSM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="calendarcontent">
+      <div class="navHeader">
+        <div class="setToday">
+          <button onclick="setTodays()">
+              <span>&#128197;</span>
+              <span>Hôm Nay</span>
+          </button>
+        </div>
+        <div class="navPrevBtn" onclick="prevBtn()">
+          <span>&#8593;</span>
+        </div>
+        <div class="navNextBtn" onclick="nextBtn()">
+          <span>&#8595;</span>
+        </div>
+      </div>
+      <div class="CHeader">
+          <div class="CHeaderWeekdays"><span>Thứ hai</span></div>
+          <div class="CHeaderWeekdays"><span>Thứ ba</span></div>
+          <div class="CHeaderWeekdays"><span>Thứ tư</span></div>
+          <div class="CHeaderWeekdays"><span>Thứ năm</span></div>
+          <div class="CHeaderWeekdays"><span>Thứ sáu</span></div>
+          <div class="CHeaderWeekdays"><span>Thứ bảy</span></div>
+          <div class="CHeaderWeekdays"><span>Chủ nhật</span></div>
+      </div>
+      <div class="CContent" id="CContent">
+          <!-- <div class="dayContent">
+            <div class="dayContentHeader">
+              <span>1</span>
+            </div>
+            <div class="dayContentTask">
+              <div class="task">
+                <span>11 SA Họp Phòng</span>
+              </div>
+              <div class="task">
+                <span>11 SA Họp Phòng</span>
+              </div>
+            </div>
+          </div> -->
+      </div>  
+    </div>
+
+  </main>
+  <script>
+    
+  </script>
+</body>
+
+</html>
